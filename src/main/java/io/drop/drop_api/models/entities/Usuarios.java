@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotEmpty;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -27,6 +28,9 @@ public class Usuarios {
     private String email;
 
     @Column
+    private String name;
+
+    @Column
     @NotEmpty(message = "Campo obrigatorio")
     private String senha;
 
@@ -34,14 +38,28 @@ public class Usuarios {
     private boolean is_active_user;
 
     @Column
-    private Date data_criacao;
+    private LocalDateTime data_criacao;
 
     @Column
-    private Date data_atualizacao;
+    private LocalDateTime data_atualizacao;
 
     @PrePersist
     public void prePersist() {
         is_active_user = true;
+        data_criacao = LocalDateTime.now();
+        data_atualizacao = LocalDateTime.now();
     }
+
+    @PreUpdate
+    protected void onUpdate() {
+        data_atualizacao = LocalDateTime.now();
+    }
+
+
+
+
+
+
+
 
 }
