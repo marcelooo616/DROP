@@ -32,7 +32,7 @@ public class Usuarios {
 
     @Column
     @NotEmpty(message = "Campo obrigatorio")
-    private String senha;
+    private String password;
 
     @Column
     private boolean is_active_user;
@@ -43,9 +43,13 @@ public class Usuarios {
     @Column
     private LocalDateTime data_atualizacao;
 
+    @Column
+    private boolean isAdmin;
+
     @PrePersist
     public void prePersist() {
         is_active_user = true;
+        isAdmin = true;
         data_criacao = LocalDateTime.now();
         data_atualizacao = LocalDateTime.now();
     }

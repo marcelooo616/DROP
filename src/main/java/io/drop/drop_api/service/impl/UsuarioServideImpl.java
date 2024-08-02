@@ -34,7 +34,7 @@ public class UsuarioServideImpl implements UsuarioService {
         Usuarios usuario = new Usuarios();
         usuario.setName(usuarioDTO.getName());
         usuario.setEmail(usuarioDTO.getEmail());
-        usuario.setSenha(usuarioDTO.getPassword());
+        usuario.setPassword(usuarioDTO.getPassword());
 
         usuarioRepository.save(usuario);
         Address address = addresRepository.save(saveAdress(usuario));
