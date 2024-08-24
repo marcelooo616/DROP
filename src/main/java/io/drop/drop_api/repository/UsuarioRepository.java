@@ -1,6 +1,6 @@
 package io.drop.drop_api.repository;
 
-import io.drop.drop_api.models.entities.Usuarios;
+import io.drop.drop_api.models.entities.usuario.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

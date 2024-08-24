@@ -1,4 +1,4 @@
-package io.drop.drop_api.models.entities;
+package io.drop.drop_api.models.entities.usuario;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table(name = "PersonalData")
-public class PersonalData {
+@Table(name = "Contacts")
+public class Contacts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,18 +24,8 @@ public class PersonalData {
     private Usuarios usuarios;
 
     @Column
-    private String completed_name;
+    private String sort;
 
     @Column
-    private String birthday;
-
-    @Column
-    private String cpf;
-
-    @Column
-    private String rg;
-
-    @Column
-    private String gender;
-
+    private String data_value;
 }

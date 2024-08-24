@@ -1,4 +1,4 @@
-package io.drop.drop_api.models.entities;
+package io.drop.drop_api.models.entities.usuario;
 
 
 import jakarta.persistence.*;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotEmpty;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor

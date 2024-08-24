@@ -2,10 +2,10 @@ package io.drop.drop_api.service.impl;
 
 
 import io.drop.drop_api.models.dto.UsuariosDTO;
-import io.drop.drop_api.models.entities.Address;
-import io.drop.drop_api.models.entities.Contacts;
-import io.drop.drop_api.models.entities.PersonalData;
-import io.drop.drop_api.models.entities.Usuarios;
+import io.drop.drop_api.models.entities.usuario.Address;
+import io.drop.drop_api.models.entities.usuario.Contacts;
+import io.drop.drop_api.models.entities.usuario.PersonalData;
+import io.drop.drop_api.models.entities.usuario.Usuarios;
 import io.drop.drop_api.repository.AddresRepository;
 import io.drop.drop_api.repository.ContactsRepository;
 import io.drop.drop_api.repository.PersonalDataRepository;
@@ -13,8 +13,6 @@ import io.drop.drop_api.repository.UsuarioRepository;
 import io.drop.drop_api.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.validation.constraints.NotNull;
 
 @Service
 @RequiredArgsConstructor

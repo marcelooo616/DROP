@@ -1,5 +1,4 @@
-package io.drop.drop_api.models.entities;
-
+package io.drop.drop_api.models.entities.usuario;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,15 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotEmpty;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 @Entity
-@Table(name = "Address")
-public class Address {
+@Table(name = "PersonalData")
+public class PersonalData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,18 +21,21 @@ public class Address {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    @NotEmpty(message = "Campo obrigatorio")
     private Usuarios usuarios;
 
     @Column
-    private String road;
+    private String completed_name;
 
     @Column
-    private String city;
+    private String birthday;
 
     @Column
-    private String state;
+    private String cpf;
 
     @Column
-    private String postal_code;
+    private String rg;
+
+    @Column
+    private String gender;
+
 }

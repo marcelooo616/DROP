@@ -1,4 +1,4 @@
-/*package io.drop.drop_api.models.entities;
+package io.drop.drop_api.models.entities.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,6 +26,6 @@ public class Category {
 
     private String description;
 
-    @OneToMany(mappedBy = "category")
-    private List<Products> products;
-}*/
+   // @OneToMany(mappedBy = "category")
+    //private List<Products> products;
+}

@@ -1,6 +1,6 @@
 package io.drop.drop_api.jwt;
 
-import io.drop.drop_api.models.entities.Usuarios;
+import io.drop.drop_api.models.entities.usuario.Usuarios;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

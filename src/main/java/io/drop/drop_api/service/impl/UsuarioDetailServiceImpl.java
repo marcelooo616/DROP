@@ -3,10 +3,10 @@ package io.drop.drop_api.service.impl;
 
 import io.drop.drop_api.exeption.SenhaInvalidaException;
 import io.drop.drop_api.models.dto.UsuariosDTO;
-import io.drop.drop_api.models.entities.Address;
-import io.drop.drop_api.models.entities.Contacts;
-import io.drop.drop_api.models.entities.PersonalData;
-import io.drop.drop_api.models.entities.Usuarios;
+import io.drop.drop_api.models.entities.usuario.Address;
+import io.drop.drop_api.models.entities.usuario.Contacts;
+import io.drop.drop_api.models.entities.usuario.PersonalData;
+import io.drop.drop_api.models.entities.usuario.Usuarios;
 import io.drop.drop_api.exeption.BusinessRule;
 
 import io.drop.drop_api.repository.AddresRepository;

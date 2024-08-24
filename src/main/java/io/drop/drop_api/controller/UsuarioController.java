@@ -6,7 +6,7 @@ import io.drop.drop_api.jwt.JwtService;
 import io.drop.drop_api.models.dto.CredenciaisDTO;
 import io.drop.drop_api.models.dto.TokenDTO;
 import io.drop.drop_api.models.dto.UsuariosDTO;
-import io.drop.drop_api.models.entities.Usuarios;
+import io.drop.drop_api.models.entities.usuario.Usuarios;
 import io.drop.drop_api.service.impl.UsuarioDetailServiceImpl;
 import io.drop.drop_api.service.impl.UsuarioServideImpl;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +38,7 @@ public class UsuarioController {
     public Usuarios save(@Valid @RequestBody UsuariosDTO usuarioDTO){
         String encryptedPassword = passwordEncoder.encode(usuarioDTO.getPassword());
         usuarioDTO.setPassword(encryptedPassword);
+        System.out.println("gsdrg");
         return  usuarioServide.save(usuarioDTO);
     }
 
