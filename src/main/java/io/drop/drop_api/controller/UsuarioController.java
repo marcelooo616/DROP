@@ -7,9 +7,12 @@ import io.drop.drop_api.models.dto.CredenciaisDTO;
 import io.drop.drop_api.models.dto.TokenDTO;
 import io.drop.drop_api.models.dto.UsuariosDTO;
 import io.drop.drop_api.models.entities.usuario.Usuarios;
+import io.drop.drop_api.repository.UsuarioRepository;
 import io.drop.drop_api.service.impl.UsuarioDetailServiceImpl;
-import io.drop.drop_api.service.impl.UsuarioServideImpl;
+
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +23,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,7 +31,7 @@ import java.util.Collection;
 public class UsuarioController {
 
 
-    private final UsuarioServideImpl usuarioServide;
+    private final UsuarioRepository usuarioRepository;
     private final UsuarioDetailServiceImpl userDetailService;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
@@ -38,8 +42,8 @@ public class UsuarioController {
     public Usuarios save(@Valid @RequestBody UsuariosDTO usuarioDTO){
         String encryptedPassword = passwordEncoder.encode(usuarioDTO.getPassword());
         usuarioDTO.setPassword(encryptedPassword);
-        System.out.println("gsdrg");
-        return  usuarioServide.save(usuarioDTO);
+        System.out.println("Chamando controler");
+        return  userDetailService.save(usuarioDTO);
     }
 
     public static boolean isUserAdmin(Collection<? extends GrantedAuthority> authorities) {
@@ -90,4 +94,12 @@ public class UsuarioController {
         }
 
     }
+
+    @GetMapping("/all")
+    public List<Usuarios> showAll(){
+        return usuarioRepository.findAll(Sort.by("name"));
+    }
+
+
+
 }

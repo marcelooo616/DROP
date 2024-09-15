@@ -38,4 +38,12 @@ public class Address {
 
     @Column
     private String postal_code;
+
+    @PrePersist
+    public void prePersist() {
+        road = (road == null) ? "" : road;
+        city = (city == null) ? "" : city;
+        state = (state == null) ? "" : state;
+        postal_code = (postal_code == null) ? "" : postal_code;
+    }
 }

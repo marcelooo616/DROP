@@ -40,6 +40,7 @@ public class SecurityConfig  {
                         .requestMatchers("/h2-console/**").permitAll() // Permite acesso ao console H2
                         .requestMatchers("/api/product/**").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/api/product/show/all").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/usuario/all").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/insert").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/auth").permitAll()
                         .anyRequest().authenticated()

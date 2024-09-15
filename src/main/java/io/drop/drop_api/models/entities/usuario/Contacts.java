@@ -28,4 +28,11 @@ public class Contacts {
 
     @Column
     private String data_value;
+
+    @PrePersist
+    public void prePersist() {
+        sort = (sort == null) ? "" : sort;
+        data_value = (data_value == null) ? "" : data_value;
+    }
+
 }

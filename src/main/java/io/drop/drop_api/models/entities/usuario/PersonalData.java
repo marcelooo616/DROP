@@ -38,4 +38,12 @@ public class PersonalData {
     @Column
     private String gender;
 
+    @PrePersist
+    public void prePersist() {
+        birthday = (birthday == null) ? "" : birthday;
+        cpf = (cpf == null) ? "" : cpf;
+        rg = (rg == null) ? "" : rg;
+        gender = (gender == null) ? "" : gender;
+    }
+
 }

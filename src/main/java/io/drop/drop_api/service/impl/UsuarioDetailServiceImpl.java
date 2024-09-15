@@ -46,7 +46,7 @@ public class UsuarioDetailServiceImpl implements UserDetailsService {
 
     @Transactional
     public Usuarios save(UsuariosDTO usuarioDTO) {
-
+        System.out.println("jksfsdfsd");
         Usuarios usuario = new Usuarios();
         usuario.setName(usuarioDTO.getName());
         usuario.setEmail(usuarioDTO.getEmail());
@@ -62,10 +62,6 @@ public class UsuarioDetailServiceImpl implements UserDetailsService {
 
     private Address saveAdress(Usuarios usuario_id ) {
         Address address = new Address();
-        address.setCity("");
-        address.setRoad("");
-        address.setState("");
-        address.setPostal_code("");
         address.setUsuarios(usuario_id);
         return address;
     }
@@ -73,10 +69,6 @@ public class UsuarioDetailServiceImpl implements UserDetailsService {
     private PersonalData savePersonalData(Usuarios usuario){
         PersonalData personalData = new PersonalData();
         personalData.setCompleted_name(usuario.getName());
-        personalData.setRg("");
-        personalData.setBirthday("");
-        personalData.setGender("");
-        personalData.setCpf("");
         personalData.setUsuarios(usuario);
         return personalData;
     }
