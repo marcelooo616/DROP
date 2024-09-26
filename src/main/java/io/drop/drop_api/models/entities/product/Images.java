@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "Images")
 public class Images {
-// entity not finaly
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,8 +22,8 @@ public class Images {
     @Column(columnDefinition = "TEXT")
     private String url;
 
-   // @ManyToOne
-   //   @JoinColumn(name = "product_id")
-    //  private Products products;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Products products;
 
 }

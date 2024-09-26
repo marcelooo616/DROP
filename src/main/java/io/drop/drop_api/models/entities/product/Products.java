@@ -36,9 +36,13 @@ public class Products {
     @Column(name = "data_atualizacao", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private LocalDateTime data_update;
 
-   @OneToMany
-   @JsonIgnore
-   private List<Skus> skus;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @OneToMany(mappedBy = "products_id", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Skus> skus;
 
     @PrePersist
     protected void prePersist() {

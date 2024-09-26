@@ -1,4 +1,4 @@
-package io.drop.drop_api.controller;
+package io.drop.drop_api.controller.usuario;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

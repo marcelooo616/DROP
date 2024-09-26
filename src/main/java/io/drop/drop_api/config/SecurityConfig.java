@@ -38,11 +38,20 @@ public class SecurityConfig  {
                 .csrf(csrf -> csrf.disable()) // Desabilita CSRF
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/h2-console/**").permitAll() // Permite acesso ao console H2
-                        .requestMatchers("/api/product/**").hasRole("USER")
-                        .requestMatchers(HttpMethod.GET, "/api/product/show/all").hasAnyRole("USER", "ADMIN")
+                        //.requestMatchers("/api/product/**").hasRole("USER")
+                        //.requestMatchers(HttpMethod.GET, "/api/product/show/all").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/usuario/all").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/insert").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/auth").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/product/save").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/product/show/all").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/category/save").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/category/show/all").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/SKUs/show/all").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/SKUs/show/all/{product_id}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/SKUs/save").permitAll()
+
+
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers

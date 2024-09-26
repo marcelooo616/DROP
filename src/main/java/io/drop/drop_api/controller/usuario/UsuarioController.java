@@ -1,4 +1,4 @@
-package io.drop.drop_api.controller;
+package io.drop.drop_api.controller.usuario;
 
 
 import io.drop.drop_api.exeption.SenhaInvalidaException;
@@ -7,7 +7,7 @@ import io.drop.drop_api.models.dto.CredenciaisDTO;
 import io.drop.drop_api.models.dto.TokenDTO;
 import io.drop.drop_api.models.dto.UsuariosDTO;
 import io.drop.drop_api.models.entities.usuario.Usuarios;
-import io.drop.drop_api.repository.UsuarioRepository;
+import io.drop.drop_api.repository.usuario.UsuarioRepository;
 import io.drop.drop_api.service.impl.UsuarioDetailServiceImpl;
 
 import lombok.RequiredArgsConstructor;

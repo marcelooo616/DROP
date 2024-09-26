@@ -9,10 +9,10 @@ import io.drop.drop_api.models.entities.usuario.PersonalData;
 import io.drop.drop_api.models.entities.usuario.Usuarios;
 import io.drop.drop_api.exeption.BusinessRule;
 
-import io.drop.drop_api.repository.AddresRepository;
-import io.drop.drop_api.repository.ContactsRepository;
-import io.drop.drop_api.repository.PersonalDataRepository;
-import io.drop.drop_api.repository.UsuarioRepository;
+import io.drop.drop_api.repository.usuario.AddresRepository;
+import io.drop.drop_api.repository.usuario.ContactsRepository;
+import io.drop.drop_api.repository.usuario.PersonalDataRepository;
+import io.drop.drop_api.repository.usuario.UsuarioRepository;
 
 
 import org.springframework.http.HttpStatus;

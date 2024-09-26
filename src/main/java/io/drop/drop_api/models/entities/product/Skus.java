@@ -22,9 +22,9 @@ public class Skus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;               // Identificador único da SKU (Primary Key)
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "skus_id")
-    private Products products;         // Identificador do produto (Foreign Key)
+    private Products products_id;         // Identificador do produto (Foreign Key)
 
     @Column
     private String codeSku;         // Código único da SKU (UNIQUE, NOT NULL)

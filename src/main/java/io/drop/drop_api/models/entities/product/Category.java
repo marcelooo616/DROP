@@ -1,5 +1,6 @@
 package io.drop.drop_api.models.entities.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,6 +27,7 @@ public class Category {
 
     private String description;
 
-   // @OneToMany(mappedBy = "category")
-    //private List<Products> products;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Products> products;
 }
