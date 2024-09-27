@@ -46,12 +46,13 @@ public class SecurityConfig  {
                         .requestMatchers(HttpMethod.POST, "/api/product/save").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/product/show/all").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/category/save").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/image/save").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/image/show/all").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/category/show/all").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/SKUs/show/all").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/SKUs/show/all/{product_id}").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/image/show/all/{product_id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/SKUs/save").permitAll()
-
-
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers
